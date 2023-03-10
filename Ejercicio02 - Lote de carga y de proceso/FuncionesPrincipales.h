@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "FuncionesAuxiliares.h"
 
@@ -5,12 +6,15 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-void cargarLote(int vAN[300], int vStock[300], float vPrecio[300]) {
+void cargarLote(int vAN[300], int vStock[300], float vPrecio[300]) 
+{
     int AN, S;
     float P;
 
-    for (int i = 0; i < 300; i++) {
-        if (i == 0) {
+    for (int i = 0; i < 300; i++) 
+    {
+        if (i == 0) 
+        {
             cout << "Numero de articulo (" << i + 1 <<"): "; cin >> AN;
             cout << "Cantidad de unidades en stock: "; cin >> S;
             cout << "Precio unitario: $"; cin >> P;
@@ -19,7 +23,8 @@ void cargarLote(int vAN[300], int vStock[300], float vPrecio[300]) {
             vStock[i] = S;
             vPrecio[i] = P;
         }
-        else {
+        else 
+        {
             cout << "\nNumero de articulo (" << i + 1 << "): "; cin >> AN;
             cout << "Cantidad de unidades en stock: "; cin >> S;
             cout << "Precio unitario: $"; cin >> P;
@@ -31,15 +36,17 @@ void cargarLote(int vAN[300], int vStock[300], float vPrecio[300]) {
     }
 }
 
-void Proceso(int vNumeroArticulo[300], int vStock[300], float vPrecio[300], float vCompra[300], bool vArticulo[300]) {
+void Proceso(int vNumeroArticulo[300], int vStock[300], float vPrecio[300], 
+             float vCompra[300], bool vArticulo[300]) 
+{
     int clienteNumero, articuloNumero, cantidadVendida, I;
-
 
     cout << "\nNumero de cliente (1 a 300): "; cin >> clienteNumero;
     cout << "Numero de articulo: "; cin >> articuloNumero;
     cout << "Cantidad de unidades vendidas: "; cin >> cantidadVendida;
 
-    while (clienteNumero != 0) {
+    while (clienteNumero != 0) 
+    {
         float importeTotal = 0;
 
         I = buscarI(articuloNumero, vNumeroArticulo);
@@ -50,16 +57,17 @@ void Proceso(int vNumeroArticulo[300], int vStock[300], float vPrecio[300], floa
 
         vArticulo[I] = true;
 
-        cout << "\n-------------------------------------------------------------------";
-        cout << "\n\t                      Detalles de la venta";
+        cout << "\n-----------------------------------------------------------";
+        cout << "\n\t                   Detalles de la venta";
         cout << "\nNumero de cliente: " << clienteNumero;
         cout << "\nNumero de articulo: " << articuloNumero;
         cout << "\nCantidad de unidades vendidas: " << cantidadVendida;
         cout << "\nImporte total : $" << importeTotal;
-        cout << "\n-------------------------------------------------------------------" << endl;
+        cout << "\n-----------------------------------------------------------\n";
 
         cout << "\nNumero de cliente (1 a 300): "; cin >> clienteNumero;
-        if (clienteNumero != 0) {
+        if (clienteNumero != 0) 
+        {
             cout << "Numero de articulo: "; cin >> articuloNumero;
             cout << "Cantidad de unidades vendidas: "; cin >> cantidadVendida;
         }
@@ -67,36 +75,48 @@ void Proceso(int vNumeroArticulo[300], int vStock[300], float vPrecio[300], floa
 }
 
 
-void FPB(float vCompras[300]) {
+void FPB(float vCompras[300]) 
+{
     int CN = 1;
     float maxCN = vCompras[0];
 
-    for (int i = 0; i < 300; i++) {
-        if (vCompras[i] > maxCN) {
+    for (int i = 0; i < 300; i++) 
+    {
+        if (vCompras[i] > maxCN) 
+        {
             maxCN = vCompras[i];
             CN = i + 1;
         }
     }
-    cout << "El numero de cliente " << CN << " fue el mayor comprador en total: $" << maxCN << endl;
+    cout << "El numero de cliente " << CN
+         << " fue el mayor comprador en total: $" << maxCN << "\n";
 }
 
-void FPC(int vAN[300], bool vArticulo[300]) {
-    for (int i = 0; i < 300; i++) {
-        if (!vArticulo[i]) {
-            cout << "\nEl numero de articulo " << vAN[i] << " no registro ninguna venta.";
+void FPC(int vAN[300], bool vArticulo[300]) 
+{
+    for (int i = 0; i < 300; i++) 
+    {
+        if (!vArticulo[i]) 
+        {
+            cout << "\nEl numero de articulo " << vAN[i] 
+                 << " no registro ninguna venta.";
         }
     }
 }
 
 
-void inicializar(float vCompras[300]) {
-    for (int i = 0; i < 300; i++) {
+void inicializar(float vCompras[300]) 
+{
+    for (int i = 0; i < 300; i++) 
+    {
         vCompras[i] = 0;
     }
 }
 
-void falsear(bool vArticle[300]) {
-    for (int i = 0; i < 300; i++) {
-        vArticle[i] = false;
+void falsear(bool vArticulo[300]) 
+{
+    for (int i = 0; i < 300; i++) 
+    {
+        vArticulo[i] = false;
     }
 }

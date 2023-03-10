@@ -1,4 +1,4 @@
-
+#pragma once
 int const cantAgencias = 20, cantAutos = 10, cantClientes = 200;
 float vUbicaciones[3];
 int vCategorias[10];
@@ -62,7 +62,8 @@ void inicializarvAgenciasMensual(int vAgenciasMensual[], int const cantAgencias)
     }
 }
 
-void recaudacionUbicaciones(struct datosAutos vAutos[], int iAuto, float vUbicaciones[], int kmRecorridos)
+void recaudacionUbicaciones(struct datosAutos vAutos[], int iAuto, 
+                            float vUbicaciones[], int kmRecorridos)
 {
     switch (vAutos[iAuto].agencia.ubiAgencia)
     {

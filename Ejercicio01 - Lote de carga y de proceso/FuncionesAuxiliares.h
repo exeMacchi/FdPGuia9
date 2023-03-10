@@ -1,21 +1,29 @@
+#pragma once
 #include <iostream>
 
 using std::cout;
 using std::endl;
 
-int buscarI(int AC, int vC[20]) {
-    for (int i = 0; i < 20; i++) {
-        if (AC == vC[i]) {
+int buscarI(int AC, int vC[20]) 
+{
+    for (int i = 0; i < 20; i++) 
+    {
+        if (AC == vC[i]) 
+        {
             return i;
         }
     }
 }
 
-void ordenarMayorAMenor(int vC[20], int vA[20]) {
+void ordenarMayorAMenor(int vC[20], int vA[20]) 
+{
     int Aux;
-    for (int i = 0; i < 20; i++) {
-        for (int x = 0; x < 19; x++) {
-            if (vA[x] < vA[x + 1]) {
+    for (int i = 0; i < 20; i++) 
+    {
+        for (int x = 0; x < 19; x++) 
+        {
+            if (vA[x] < vA[x + 1]) 
+            {
                 Aux = vA[x];
                 vA[x] = vA[x + 1];
                 vA[x + 1] = Aux;
@@ -27,8 +35,10 @@ void ordenarMayorAMenor(int vC[20], int vA[20]) {
     }
 }
 
-void noVentasMes(int i) {
-    switch (i) {
+void noVentasMes(int i) 
+{
+    switch (i) 
+    {
         case 0:
             cout << "En enero no se registraron ventas." << endl;
             break;
@@ -83,54 +93,56 @@ void noVentasMes(int i) {
     }
 }
 
-void ventasMes(int i, int vM[12]) {
-    switch (i) {
+void ventasMes(int i, int vM[12]) 
+{
+    switch (i) 
+    {
         case 0:
-            cout << "En enero, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En enero, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 1:
-            cout << "En febrero, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En febrero, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 2:
-            cout << "En marzo, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En marzo, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 3:
-            cout << "En abril, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En abril, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 4:
-            cout << "En mayo, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En mayo, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 5:
-            cout << "En junio, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En junio, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 6:
-            cout << "En julio, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En julio, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 7:
-            cout << "En agosto, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En agosto, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 8:
-            cout << "En septiembre, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En septiembre, " << vM[i] << " ventas fueron registrada.\n";
             break;
 
         case 9:
-            cout << "En octubre, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En octubre, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 10:
-            cout << "En noviemrbe, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En noviembre, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         case 11:
-            cout << "En diciembre, " << vM[i] << " ventas fueron registradas." << endl;
+            cout << "En diciembre, " << vM[i] << " ventas fueron registradas.\n";
             break;
 
         default:
@@ -138,4 +150,3 @@ void ventasMes(int i, int vM[12]) {
             break;
     }
 }
-
